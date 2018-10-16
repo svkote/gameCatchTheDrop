@@ -2,28 +2,25 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        System.out.println("Введите операцию:");
-        System.out.println("1. Сложение");
-        System.out.println("2. Вчитание");
-        System.out.println("3. Умножение");
-        System.out.println("4. Деление");
-        System.out.println("5. Остаток от деления");
         Scanner scanner = new Scanner(System.in);
-        int operation = scanner.nextInt();
-        System.out.println("Введите первое число");
-        int a = scanner.nextInt();
-        System.out.println("Введите второе число");
-        int b = scanner.nextInt();
-        if (operation == 1) {
-            System.out.println("Результат = " + (a + b));
-        } else if (operation == 2) {
-            System.out.println("Результат = " + (a - b));
-        } else if (operation == 3) {
-            System.out.println("Результат = " + (a * b));
-        } else if (operation == 4) {
-            System.out.println("Результат = " + (a / b));
-        } else if (operation == 5) {
-            System.out.println("Результат = " + (a % b));
+        System.out.println("Ваша задача угадать число");
+        int range = 20;
+        int num = (int)(Math.random() * range);
+        int count = 0;
+        while(true){
+            System.out.println("Угадайте число от 0 до " + range);
+            int input_number = scanner.nextInt();
+            count += 1;
+            if(input_number == num){
+                System.out.println("Вы угадали");
+                break;
+            }
+            System.out.println("Количество попыток: " + count);
+            if(input_number > num){
+                System.out.println("Вы не угадали! Загаданное число меньше");
+            } else if(input_number < num){
+                System.out.println("Вы не угадали! Загаданное число больше");
+            }
         }
     }
 }
