@@ -22,5 +22,6 @@ public class main {
                 System.out.println("Вы не угадали! Загаданное число больше");
             }
         }
+        scanner.close();
     }
 }
